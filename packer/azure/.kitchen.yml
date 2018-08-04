@@ -1,0 +1,27 @@
+driver:
+  name: azurerm
+  subscription_id: <%= ENV['ARM_SUBSCRIPTION_ID'] %>
+  location: 'East US'
+  machine_size: 'Standard_DS2_v2'
+
+transport:
+  ssh_key: ~/.ssh/id_rsa
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: azure/xenial64
+    driver:
+      imageOffer: alvaroXenial64
+      vm_name: myvm
+      vm_tags:
+        ostype: linux
+        distro: ubuntu
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default
+
