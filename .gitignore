@@ -1,10 +1,2 @@
-packer_cache/
-output-*/
-priv/
 .vagrant/
-.kitchen/
-*.box
-*.iso
-
-.terraform
-*.tfstate*
+*.log
